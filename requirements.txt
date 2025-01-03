@@ -1,3 +1,9 @@
 fastapi
 uvicorn
-jinja2
+python-jose
+python-decouple
+python-multipart
+python-dotenv
+bcrypt
+requests
+

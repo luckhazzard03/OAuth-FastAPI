@@ -1,0 +1,18 @@
+#docker-compose.yml
+version: "3"
+
+services:
+  fastapi:
+    image: image-fastapioauth
+    build: .
+    container_name: fastapioauth-application
+    working_dir: /app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./src:/app/src
+    # environment:  # Aquí defines las variables de entorno
+    #   - userFastapiOauth=${userFastapiOauth}  # Esto busca las variables en tu sistema local
+    #   - passwordFastapiOauth=${passwordFastapiOauth}
+    env_file:  # Esto asegura que Docker cargue las variables del archivo .env
+      - .env
